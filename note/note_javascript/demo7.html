@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小动画</title>
+    <style>
+        #bigBox {
+            width: 320px;
+            height: 350px;
+            margin: 0 auto;
+        }
+
+        #box {
+            margin: 30px auto;
+            width: 320px;
+            height: 320px;
+            border: 1px solid #008CD7;
+            /*transition-property: width;*/
+            /*transition-duration:.3s ;*/
+            /*transition-timing-function: 过渡效果*/
+            /*transition-delay: 延迟*/
+            -webkit-transition: all .3s linear;
+            -moz-transition: all .3s linear;
+            -ms-transition: all .3s linear;
+            -o-transition: all .3s linear;
+        }
+
+        .small {
+            width: 50px;
+            height: 50px;
+            background: lightseagreen;
+            transition: all .3s linear;
+            animation: move 3s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0px, 0px) rotate(0deg);
+                background: lightcoral;
+            }
+            25% {
+                transform: translate(270px, 0px) rotate(360deg);
+                background: lightyellow;
+            }
+            50% {
+                transform: translate(270px, 270px) rotate(0deg);
+                background: lightblue;
+            }
+            75% {
+                transform: translate(0px, 270px) rotate(360deg);
+                background: green;
+            }
+            100% {
+                transform: translate(0px, 0px) rotate(0deg);
+                background: lightcoral;
+            }
+        }
+
+        /*   transform ： translate、scale、rotate、skew*/
+
+        /*!*translate : 水平方向偏移*!  */
+
+        /*scale : 缩放*/
+
+        /*rotate: 旋转*/
+
+        /*skew : 倾斜*/
+    </style>
+</head>
+
+<body>
+    <div id="bigBox">
+        <div id="box">
+            <div class="small" id="small"></div>
+        </div>
+        <button id="move">动画</button>
+    </div>
+
+    <script>
+        //    var oBox = document.getElementById("box");
+        //    oBox.onmouseover = function () {
+        //        //
+        //    }
+        var small = document.getElementById("small")
+        var move = document.getElementById("move");
+        // animationPlayState : 代表当前元素运动的状态；
+        // paused : 动画停止
+        // running : 动画继续执行；
+        move.onclick = function () {
+            if (small.style.animationPlayState === "paused") {
+                small.style.animationPlayState = "running";
+                return;
+            }
+            small.style.animationPlayState = "paused";
+        }
+    </script>
+</body>
+
+</html>

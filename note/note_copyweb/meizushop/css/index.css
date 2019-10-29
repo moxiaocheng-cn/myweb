@@ -1,0 +1,330 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+    width:0;
+    height:0;
+    font-size:0;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+
+/*头部广告*/
+.adv{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.adv img{
+    width: 1920px;
+    margin-left: -285px;
+    vertical-align: middle;/*消除间距*/
+}
+
+
+/*nav导航*/
+.head{
+    width: 100%;
+}
+.header{
+    position: relative;
+    width: 1240px;
+    height: 80px;
+    background: #fff;
+    margin: 0 auto;
+}
+.header .logo{
+    display: inline-block;
+    height: 23px;
+    width: 116px;
+    background: url("../images/logo.png") no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 28px;
+    left: 0;
+}
+.header .service{
+    float: right;
+}
+.header .service li{
+    float: left;
+}
+.header .service .search{
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    height: 30px;
+    width: 180px;
+    margin: 25px 17px 23px;
+    text-align: right;
+    word-break: keep-all;
+    white-space: nowrap;
+    line-height: 28px;
+    padding: 0;
+}
+.header .service input{
+    border: none;
+    outline: 0;
+    width: 135px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #333;
+    float: left;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+/*.header .service input::-webkit-input-placeholder{
+    color: #9d1522;
+} 更改占位符的字体颜色*/
+.header .service .fig{
+    padding: 30px 17px 0;
+    position: relative;
+}
+.header .service .fig img{
+    width: 24px;
+    height: 24px;
+}
+.service .angle{
+    width: 8px;
+    height: 8px;
+    border: 1px solid #efefef;
+    transform: rotate(135deg);
+    background: #fff;
+    border-top: 0;
+    border-right: 0;
+    border-radius: 2px;
+}
+.service .fig .angle{
+    position: absolute;
+    top: 61px;
+    left: 24px;
+    z-index: 12;
+    display: none;
+}
+.service .fig .figbox{
+    width: 96px;
+    border: 1px solid #efefef;
+    background-color: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 65px;
+    left: -20px;
+    padding: 6px 0;
+    z-index: 10;
+    display: none;
+}
+@keyframes figbox{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 30px;
+    }
+}
+.service .fig .figbox li{
+    animation: .3s ease figbox forwards 1;
+}
+.service .fig:hover .figbox{
+    display: block;
+}
+.service .fig:hover .angle{
+    display: block;
+}
+.service .fig .figbox li{
+    float: none;
+}
+.service .fig .figbox li:hover a{
+    background-color: #eee;
+    color: #00c3f5;
+}
+.service .fig .figbox a{
+    display: block;
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+    transition: all .3s;
+    padding: 7px 0;
+}
+.header .service .buy{
+    padding: 27px 17px 0;
+    position: relative;
+}
+.service .buy .angle{
+    position: absolute;
+    top: 61px;
+    right: 25px;
+    z-index: 12;
+    background: #fff;
+    display: none;
+}
+.service .buy .shore{
+    width: 318px;
+    height: 120px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    z-index: 10;
+    display: none;
+}
+.service .buy .shore .sh_box{
+    width: 203px;
+    margin: 40px auto;
+}
+.service .buy .shore .txt{
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+}
+.service .buy .shore .icon{
+    display: inline-block;
+    width: 47px;
+    height: 42px;
+    margin-right: 10px;
+    background: url("../images/xixi.png") no-repeat;
+    background-size: cover;
+    vertical-align: text-bottom;
+}
+.service .buy:hover .shore{
+    display: block;
+}
+.service .buy:hover .angle{
+    display: block;
+}
+.header .nav{
+    float: right;
+}
+.header .nav ul li{
+    float: left;
+    margin: 0 15px;
+}
+.header .nav a{
+    display: block;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    height: 80px;
+    line-height: 80px;
+    transition: color .2s linear;
+}
+.header .nav a:hover{
+    color: #00c3f5;
+}
+
+
+
+.banner{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.banner img{
+    width: 1920px;
+    margin-left: -287px;
+    vertical-align: bottom;/*消除间距*/
+}
+.banner .category{
+    width: 244px;
+    height: 468px;
+    padding-top: 12px;
+    background-color: rgba(248,247,247,.8);
+    position: absolute;
+    top: 0;
+    left: 55px;
+}
+.banner .category li{
+    transition: all .5s;
+}
+.banner .category li:hover{
+    background-color: #fff;
+}
+.banner .category .li1:hover .ch_1,.banner .category .li2:hover .ch_2,.banner .category .li3:hover .ch_3,.banner .category .li4:hover .ch_4,.banner .category .li5:hover .ch_5,.banner .category .li6:hover .ch_6,.banner .category .li7:hover .ch_7,.banner .category .li8:hover .ch_8{
+    display: block;
+}
+.banner .category li .lis{
+    display:block;
+    color: #333;
+    font-size: 14px;
+    height: 57px;
+    line-height: 57px;
+    padding: 0 30px;
+}
+.banner .category .ch_list{
+    display: none;
+    width: 323px;
+    height: 468px;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 243px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+    padding: 12px 25px 0;
+}
+.banner .category .ch_list a{
+    display: block;
+    font-size: 14px;
+    color: #333;
+    transition: color .2s linear;/*linear线性过度*/
+}
+.banner .category .ch_list .big{
+    border-bottom: 1px solid #F5F5F5;
+    width: 100%;
+    margin: 0 auto 16px;
+    padding: 10px 0;
+    float: left;/*因为小a标签都用了浮动，所以它不用第二个就会特别高*/
+}
+.banner .category .ch_list a:hover{
+    color: #00c3f5;
+    transition: color .2s linear;
+}
+.banner .category .ch_list .big span{
+    width: 7px;
+    height: 7px;
+    background: #fff;
+    border: 2px solid #efefef;
+    float: right;
+    transform: rotate(45deg);
+    border-bottom: 0;
+    border-left: 0;
+    margin-top: 5px;
+    margin-right: 15px;
+    transition: color .2s linear;
+ }
+.banner .category .ch_list .big:hover span{
+    border-color: #00c3f5;
+    transition: color .2s linear;
+}
+.banner .category .ch_list .mini{
+    width: 150px;
+    height: 40px;
+    float: left;
+    line-height: 40px;
+    margin: 0 11px 20px 0;
+    font-size: 12px;
+    color: #333;
+}
+.banner .category .ch_list .mini span{
+    width: 40px;
+    height: 40px;
+    display: block;
+    background: url("../images/list.png") no-repeat;
+    background-size: cover;
+    float: left;
+    margin-right: 5px;
+}
+
+
+

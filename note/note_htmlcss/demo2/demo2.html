@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>audio标签</title>
+</head>
+
+<body>
+    <audio src="myDream.m4a" controls autoplay id="music" loop preload="metadata"></audio>
+    <script>
+        //
+        var music = document.getElementById("music");
+        // controls : 音乐控制器的显示； 默认是隐藏的；
+        // autoplay : 自动播放；
+        // loop : 循环播放；
+        // preload : 预加载；
+        // none：  不进行预加载
+        // auto : 自动加载；
+        // metadata :  只加载当前音乐的篇头、duration；
+
+        // duration :  代表当前音频的总时间；
+        // currentTime : 代表当前音频的播放时间；
+
+        // paused : ture/false; 音乐停止状态是true，播放状态false；
+        // pause : 方法； 可以让音乐停止
+        // play : 方法  让音乐继续播放；
+        //    music.play();
+    </script>
+</body>
+
+</html>

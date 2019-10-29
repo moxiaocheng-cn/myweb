@@ -1,0 +1,429 @@
+.header{
+    width: 1204px;
+    margin: 0 auto;
+    height: 84px;
+}
+/*logo*/
+.header .logo{
+    float: left;
+    width: 176px;
+    height: 52px;
+    /*84-52=32  32/2=16*/
+    margin: 16px 66px 0 0;/*把图片居中*/
+}
+.header .logo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*nav*/
+.header .nav{
+    float: left;
+    line-height: 84px;
+    font-size: 14px;
+}
+.header .nav a{
+    color: #2a2a2a;
+    float: left;/*清除间距*/
+    padding: 0 40px 0 20px;/*左右间距 目测*/
+}
+.header .nav a:hover{
+    color: #2b7dd1;
+}
+/*user-center*/
+.header .user-center{
+    float: right;
+    line-height: 84px;
+    font-size: 14px;
+}
+.header .user-center a{
+    float: left;/*清除间距*/
+    color: #666767;
+    margin-right: 30px;
+}
+.header .user-center a:hover{
+    color: #2b7dd1;
+}
+.cart-icon{
+    display: inline-block;
+    width: 25px;
+    height: 22px;
+    background: url("../images/06.png") no-repeat;
+    vertical-align: middle;/*垂直居中*/
+    margin-right: 7px;/*和文字内容分开*/
+}
+.header .user-center a:hover .cart-icon{
+    background: url("../images/05.png") no-repeat;
+}
+.cart{
+    position: relative;
+}
+.layer{
+    display: none;/*让元素隐藏*/
+    position: absolute;
+    top: 64px;/*测量*/
+    right: -125px;/*测量*/
+    width: 349px;/*测量*/
+    height: 411px;/*测量*/
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(2,2,2,.34);/*阴影*/
+}
+.cart:hover .layer{
+    display: block;/*让元素显示*/
+    z-index: 3;
+}
+
+
+/*banner*/
+.banner{
+    width: 1204px;
+    margin: 0 auto;
+    height: 360px;
+    overflow: hidden;
+    position: relative;
+}
+.banner .pic img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.banner .bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 360px;
+    background: #000;
+    opacity: .2;
+    filter: alpha(opacity=20);
+    /*css hcak写法 兼容Ie低版本浏览器*/
+}
+.banner .list{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 240px;
+}
+.banner .list li{
+    height: 73px;
+    line-height: 73px;
+    padding: 0 25px;/*作用：下边框线不是全屏。不能加到 h2 标签上*/
+    /*position: relative;*//*不能加*/
+}
+.banner .list li a{
+    color: #fdfdfe;
+}
+.banner .list li h2{
+    font-weight: normal;
+    font-size: 14px;
+    border-bottom: 1px solid #82b1cd;
+}
+.banner .list li .arrow{
+    float: right;
+    margin-top: -42px;
+    width: 9px;
+    height: 9px;
+    border-left: 2px solid #fefcfc;
+    border-bottom: 2px solid #fefcfc;
+    transform: rotate(-135deg);
+}
+.banner .list li:hover{
+    background: #364c6a;
+    /*background: #000;
+      opacity: .3;
+      filter: alpha(opacity=30);
+      这种写法需要独立出来一个遮罩层，才不会影响 h2 标签鼠标以上后字体颜色会有阴影的结果，同时还需要给遮罩层定位
+    */
+    /*不考虑兼容性写法： background:rgba(0,0,0,.3)*/
+}
+.banner .list li .layer_hover{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 240px;
+    width: 573px;
+    height: 360px;
+}
+.banner .list li:hover .layer_hover{
+    display: block;
+}
+.banner .list li .layer_hover1{
+    background: url("../images/text01.png") no-repeat;
+}
+.banner .list li .layer_hover2{
+    background: url("../images/text02.png") no-repeat;
+}
+.banner .list li .layer_hover3{
+    background: url("../images/text03.png") no-repeat;
+}
+.banner .list li .layer_hover4{
+    background: url("../images/text04.png") no-repeat;
+}
+.banner .list li .layer_hover5{
+    background: url("../images/text05.png") no-repeat;
+}
+
+
+/*column*/
+.column{
+    width: 1204px;
+    margin: 0 auto;
+}
+.hd{
+    padding: 40px 0 15px 0;
+    font-size: 16px;
+    color: #2d2d2d;
+    font-weight: 600;
+    font-family: 微软雅黑;
+}
+.bd{
+    margin-left: -67px;
+}
+.item{
+    position: relative;
+    width: 251px;
+    box-shadow: 0 3px 9px rgba(2,2,2,.27);
+    float: left;
+    margin-left: 66px;
+}
+.item img{
+    display: block;
+    width: 251px;
+    height: 143px;
+}
+.item .txt{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    padding: 23px 15px 9px 15px;
+    z-index: 1;
+    transition: all 1s ease;
+}
+.item .txt h3{
+    font-size: 14px;
+    color: #1e1e1e;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+.item .txt p{
+    font-size: 12px;
+    color: #9e9d9d;
+}
+.item .info{
+    position: relative;
+    z-index: 2;
+    height: 41px;
+    width: 100%;
+    line-height: 41px;
+    padding: 0 15px;
+    background: #fff;
+}
+.item .price{
+    float: left;
+    color: #c71b1b;
+    font-size: 12px;
+}
+.item .num{
+    float: right;
+    color: #868484;
+    font-size: 12px;
+}
+.item:hover .txt{
+    bottom: 41px;
+    transition: all 1s ease;
+}
+
+
+/*content*/
+.con{
+    width: 100%;
+    background-color: #f3f5f7;
+}
+.content{
+    width: 1176px;
+    margin: 28px auto 0;
+    padding: 34px 0 54px 0;
+}
+.content img,a{
+    display: block;/*去掉img之间的默认间距*/
+}
+.content .col01,.col02,.col03,.col04{
+    /*并集选择器/分组选择器*/
+    float: left;
+}
+.content .col01{
+    width: 224px;
+}
+.content .col02{
+    width: 397px;
+    margin: 0 17px;
+}
+.content .col02 a:first-child,.col03 .item{
+    /*选择第一个 a 标签 a:first-child*/
+    margin-bottom: 11px;
+    margin-left: 0;
+}
+.content .col03,.col04{
+    width: 251px;
+}
+.content .col04 a:hover{
+    color: #2b7dd1;
+}
+.content .col04{
+    margin-left: 17px;
+    position: relative;
+}
+.content .col04 img{
+    width: 251px;
+    height: 143px;
+}
+.content .col04 .info{
+    width: 100%;
+    height: 306px;
+    position: absolute;
+    left: 0;
+    top: 73px;
+    background: #fff;
+    padding: 0 15px;
+    box-shadow: 0 2px 4px rgba(2,2,2,.27);
+}
+.content .col04 h2{
+    font-size: 16px;
+    font-weight: 500;
+    color: #1e1e1e;
+    line-height: 24px;
+    padding-top: 28px;
+}
+.content .col04 p{
+    font-size: 12px;
+    color: #9e9d9d;
+    line-height: 24px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+.content .col04 ul{
+    padding-top: 10px;
+}
+.content .col04 ul li{
+    list-style: none;
+    padding-top: 15px;
+}
+.content .col04 ul li a{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: #1e1e1e;
+}
+.content .col04 ul li a:before{
+    content:'';
+    width: 4px;
+    height: 4px;
+    background-color: #636363;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+
+/*floatBar*/
+.floatBar{
+    position: fixed;
+    top: 77px;
+    right: 0;
+    z-index: 10;
+    width: 65px;
+    height: 236px;
+    box-shadow:0 6px 6px rgba(2,2,2,.17);
+    background: #fff;
+    margin-left: 400px;
+    margin-top: 50px;
+}
+.floatBar ul li{
+    list-style: none;
+    position: relative;
+}
+.floatBar span{
+    display: block;
+    width: 39px;
+    height: 59px;
+    margin: 0 auto;
+}
+.floatBar .icon-weixin1{
+    border-bottom:1px solid #e1e1e1;
+    background: url("../images/right.png") no-repeat 7px 22px;
+}
+.floatBar .icon-weixin2{
+    border-bottom:1px solid #e1e1e1;
+    background: url("../images/right.png") no-repeat 7px -38px;
+}
+.floatBar .icon-weixin3{
+    border-bottom:1px solid #e1e1e1;
+    background: url("../images/right.png") no-repeat 7px -99px;
+}
+.floatBar .icon-weixin4{
+    border: 0;
+    background: url("../images/right.png") no-repeat 7px -162px;
+}
+.floatBar em{
+    display: none;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 14px;
+    font-style: normal;
+    color: #185b8f;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+}
+.floatBar .code{
+    display: none;
+    position: fixed;
+    top: 170px;
+    right: 69px;
+    z-index: 10;
+    width: 160px;
+    height: 193px;
+    box-shadow: 0 4px 7px rgba(2,2,2,.29);
+    background-color: #fffefe;
+    overflow: hidden;/*清楚【margin-top: 17px;】的影响*/
+}
+.floatBar .code h3{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #a3a3a3;
+    text-align: center;
+    margin-top: 17px;
+}
+.floatBar .code img{
+    display: block;
+    width: 115px;
+    height: 114px;
+    margin: 10px auto;
+}
+.floatBar .li4:hover .code{
+    display: block;
+}
+.floatBar .li4:hover em{
+    display: block;
+}
+.floatBar .li4:hover .icon-weixin4{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,532 @@
+html,body,ul{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+a{
+	text-decoration: none;
+}
+ul li{
+	list-style: none;	
+}
+input{
+	outline: none;
+}
+
+
+/*头部header样式*/
+header{
+	height: 40px;
+	font-size: 12px;
+	color: #b0b0b0;
+	background: #333;
+}
+header .continer{
+	width: 1226px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+header .continer a{
+	color: #b0b0b0;
+}
+header .continer a:hover{
+	color: #fff;
+}
+header .continer span{
+	color: #424242;
+	margin: 0 2px;
+}
+header .continer .topbar-nav{
+	float: left;
+	line-height: 40px;
+}
+header .continer .topbar-info{
+	float: right;
+	line-height: 40px;
+}
+header .continer .topbar-info .message{
+	padding: 0 5px;
+}
+header .continer .topbar-cart{	
+	float: right;
+	display: inline-block;
+	background: #424242;
+	margin-left: 15px;
+}
+header .continer .topbar-cart a{
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	text-align: center;
+	transition: all .3s;
+}
+header .continer .topbar-cart a span{
+	color: #b0b0b0;
+}
+/*自定义添加属性样式*/
+header .continer .topbar-cart .a-hover{
+	color: #ff6700;
+	background: #fff;
+}
+header .continer .topbar-cart .cart-menu{
+	width: 316px;
+	height: 98px;
+	box-shadow: 0 10px 12px -6px rgba(0,0,0,0.2); 
+	background: #fff;
+	position: absolute;
+	margin-left: -196px;
+	z-index: 30;
+	text-align: center;
+	line-height: 98px;
+	color: #424242;
+	float: right;
+}
+/*此处动画效果用JS写 
+ * 以下代码可以实现鼠标移上的效果，但是没有鼠标移出的效果  
+ * 建议使用js实现，更好兼容
+ * */
+/*header .continer .topbar-cart a:hover + .cart-menu{
+	display: block;
+}
+@keyframes cart-menu{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 98px;
+    }
+}
+header .continer .topbar-cart .cart-menu{
+    animation: cart-menu .3s ease backwards 1;
+}*/
+
+
+/*头部导航样式*/
+nav{
+	position: relative;
+	z-index: 20;
+}
+nav .continer{
+	width: 1226px;
+	height: 100px;
+	margin: 0 auto;
+	position: relative;
+}
+/*logo样式*/
+nav .continer .logo{
+	display: inline-block;
+	width: 55px;
+	height: 55px;
+	background: #ff6700;
+	position: relative;
+    top: -22.5px;
+    bottom: 0;
+    margin-right: 10px;
+}
+nav .continer .logo:after{
+	content: url(../img/nav/mi-logo.png);
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	top: 3px;
+	left: 4px;
+}
+/*ul导航样式*/
+nav .continer ul{
+	display: inline-block;
+	overflow: hidden;
+	height: 100%;
+	line-height: 100px;
+}
+nav .continer ul li{
+	float: left;
+}
+nav .continer ul li:first-child a{
+	display: inline-block;
+	width: 165px;
+	height: 100px;
+	padding: 0;
+	background: url(../img/banner/红米.gif) no-repeat center;
+}
+nav .continer ul li:not(:first-child) a{ /*除了第一个li标签*/
+	display: inline;
+	padding: 26px 10px 38px;
+    color: #333;
+}
+nav .continer ul li:not(:first-child) a:hover{
+	color: #FF6700;	
+}
+/*input框定位及样式*/
+nav .continer input{
+	position: absolute;
+	top: 26px;
+	height: 48px;
+	border: 1px solid #e0e0e0;
+	transition: all .2s;
+}
+nav .continer .search-text{
+	width: 243px;	
+    right: 51px;
+    padding: 0 10px;
+}
+nav .continer .search-btn{
+	width: 52px;
+	background: #fff;
+    right: 0;   
+}
+nav .continer .search-btn:hover{
+	background: #ff6700;
+	border-color: #ff6700;
+}
+/*jQuery边框效果*/
+nav .continer .add{
+	border-color: #b0b0b0;
+}
+nav .continer .add-click{
+	border-color: #FF6700;
+}
+/*search-hot-words：搜索框热词*/
+nav .continer .search-hot-words{
+	position: absolute;
+	right: 62px;
+	top: 38px;
+}
+nav .continer .search-hot-words a{
+	font-size: 12px;
+	background: #eee;
+	color: #757575;
+	padding: 1px 5px;
+	transition: all .2s;
+}
+nav .continer .search-hot-words a:hover{
+	background: #ff6700;
+	color: #fff;
+}
+/*鼠标移上菜单效果*/
+nav .down-menu{
+	position: absolute;
+	z-index: 30;
+    top: 100px;
+    left: 0;
+	width: 100%;
+	height: 229px;
+	margin: 0 auto;
+	background: #fff;
+	border-top:1px solid #E0E0E0;
+	box-shadow: 0 3px 4px rgba(0,0,0,0.18);
+	/*none： 无阴影 
+	<length>①： 第1个长度值用来设置对象的阴影水平偏移值。可以为负值 
+	<length>②： 第2个长度值用来设置对象的阴影垂直偏移值。可以为负值 
+	<length>③： 如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值 
+	<length>④： 如果提供了第4个长度值则用来设置对象的阴影外延值。可以为负值
+	<color>： 设置对象的阴影的颜色。 
+	inset： 设置对象的阴影类型为内阴影。该值为空时，则对象的阴影类型为外阴影  */
+	transition: box-shadow .2s;
+	/*display: none;*/
+}
+
+
+/*continer*/
+.continer{
+	width: 1226px;
+	margin: 0 auto;
+} 
+.continer .banner {
+	position: relative;	
+}
+.continer .banner .list{
+	background: rgba(0,0,0,0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 420px;
+	width: 234px;
+	padding: 20px 0;
+}
+.change{
+	background: #FF6700;
+}
+.continer .banner .list li a{
+	position: relative;
+	font-size: 14px;
+	color: #fff;
+	display: block;
+	height: 42px;
+	line-height: 42px;
+	padding-left: 30px;
+}
+.continer .banner .list li a .iconfont{
+	color: rgba(255,255,255,0.5);
+	position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 16px;
+}
+.continer .banner .children-col{
+	/*display: none;*/
+	position: absolute;
+	top: 0;
+	left: 234px;
+	height: 458px;
+	border: 1px solid #e0e0e0;
+	background: #fff;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+}
+.continer .banner .children-col ul{
+	float: left;
+    width: 265px;
+}
+.continer .banner .children-col ul li{
+	height: 76px;
+}
+.continer .banner .children-col ul li a{
+	display: block;
+    padding: 18px 20px;
+    line-height: 40px;
+    transition: color .2s;
+}
+.continer .banner .children-col ul li a:hover{
+	color: #FF6700
+}
+.continer .banner .slide{
+	/*轮播图*/
+}
+.continer .banner-sub{
+	margin-top: 14px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+/*左侧*/
+.span4{
+	width: 234px;
+	float: left;
+}
+.continer .banner-sub .span4 ul{
+	overflow: hidden;
+	margin: 0;
+    padding: 3px;
+    list-style-type: none;
+    font-size: 12px;
+    text-align: center;
+    background: #5f5750;
+}
+.continer .banner-sub .span4 ul li{
+	position: relative;
+    float: left;
+    width: 70px;
+    height: 82px;
+    padding: 0 3px;
+}
+.continer .banner-sub .span4 ul li:before{
+	top: -1px;
+    left: 6px;
+    width: 64px;
+    height: 1px;
+}
+.continer .banner-sub .span4 ul li:after{
+	top: 6px;
+    left: 0;
+    width: 1px;
+    height: 70px;
+}
+.continer .banner-sub .span4 ul li:before,
+.continer .banner-sub .span4 ul li:after{
+	position: absolute;
+    content: "";
+    background: #665e57;
+}
+.continer .banner-sub .span4 ul li a{
+	display: block;
+    padding-top: 18px;
+    text-overflow: ellipsis; /*文字溢出：省略*/
+    white-space: nowrap;	
+    color: rgba(255,255,255,0.7);
+    transition: color .2s; /*transition:过渡*/
+}
+.continer .banner-sub .span4 ul li a i{
+	display: block;
+    height: 24px;
+    margin-bottom: 4px;
+    font-size: 24px;
+    line-height: 24px;
+}
+.continer .banner-sub .span4 ul li a:hover{
+	color: #fff;
+}
+/*右侧*/
+.span16{
+	width: 978px;
+	float: left;
+    margin-left: 14px
+}
+.span16 ul{
+	overflow: hidden;
+}
+.continer .banner-sub .span16 ul li{
+	float: left;
+    width: 316px;
+    height: 170px;
+    transition: box-shadow .2s linear;
+}
+.continer .banner-sub .span16 ul li:not(:first-child){
+	margin-left: 15px;
+}
+.continer .banner-sub .span16 ul li:hover{
+	z-index: 2;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+/*闪购*/
+.box-hd{
+	position: relative;
+    height: 58px;
+}
+.box-hd h2{
+	margin: 0;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    color: #333;
+}
+.more{
+	position: absolute;
+    top: 24px;
+    right: 0;	
+}
+.continer .flashPurchase .box-hd .more .controls a{
+	width: 24px;
+    height: 16px;
+    padding: 3px 5px;
+    border: 1px solid #e0e0e0;
+    font-size: 16px;
+    font-weight: 600px;
+    line-height: 16px;
+    color: #b0b0b0;
+    display: inline-block;
+    text-align: center;
+    margin-left: -6px;
+}
+/*body*/
+.continer .flashPurchase .box-bd{
+	position: relative;
+    width: 1226px;
+    overflow: hidden;
+    padding-bottom: 40px;	
+    text-align: center;
+}
+.continer .flashPurchase .box-bd ul li{
+	background: #f1eded;
+	float: left;
+    width: 234px;
+    margin: 0 14px 0 0;
+    padding: 0;
+	height: 300px;
+    padding-top: 39px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    transition: all .6s;
+    border-top-color: #e53935;
+}
+.continer .flashPurchase .box-bd ul li .time-title{
+	font-size: 21px;
+    color: #ef3a3b;
+    padding-top: 15px;
+}
+.continer .flashPurchase .box-bd ul li img{
+	margin: 25px auto;
+}
+.continer .flashPurchase .box-bd ul li .sub{
+	color: rgba(0,0,0,0.54);
+    font-size: 15px;
+}
+.continer .flashPurchase .box-bd ul li .countdown{
+	width: 168px;
+    margin: 28px auto 0;
+}
+.continer .flashPurchase .box-bd ul li .countdown .box{
+	width: 46px;
+    height: 46px;
+    background: #605751;
+    color: #fff;
+    font-size: 24px;
+    line-height: 46px;
+    float: left;
+}
+.continer .flashPurchase .box-bd ul li .countdown .dosh{
+	width: 15px;
+    float: left;
+    height: 46px;
+    line-height: 46px;
+    color: #605751;
+    font-size: 28px;
+}
+/*js点击效果*/
+.continer .flashPurchase .box-bd .carousel-wrapper{
+	height: 340px;
+    overflow: hidden;
+}
+.continer .flashPurchase .box-bd .carousel-wrapper ul{
+	width: 1984px;
+    margin-left: 0px;
+    transition: margin-left 0.5s ease;
+}
+.continer .flashPurchase .box-bd .carousel-wrapper ul li{
+	height: 300px;
+    padding-top: 39px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    background: #fafafa;
+    transition: all .6s;
+}
+/*彩虹线*/
+.continer .flashPurchase .box-bd .carousel-wrapper ul .rainbow1,.rainbow6{
+	border-top-color: #ffac13;
+}
+.continer .flashPurchase .box-bd .carousel-wrapper ul .rainbow2,.rainbow7{
+	border-top-color: #83c44e;
+}
+.continer .flashPurchase .box-bd .carousel-wrapper ul .rainbow3,.rainbow8{
+	border-top-color: #2196f3;
+}
+.continer .flashPurchase .box-bd .carousel-wrapper ul .rainbow4{
+	border-top-color: #e53935;
+}
+.continer .flashPurchase .box-bd .carousel-wrapper ul .rainbow5{
+	border-top-color: #00c0a5;
+}
+/*广告1*/
+.continer .itemBox{
+	margin: 2px 0 42px; 
+}
+.continer .itemBox img{
+	height: 120px;
+}
+
+
+.page-main{
+	padding-top: 60px;
+	background: #f5f5f5;
+}
+.page-main .continer #phone .box-hd .more a{
+	color: #424242;
+}
+.page-main .continer #phone .box-bd ul li{
+	transition: all .2s linear;
+}
+.page-main .continer #phone .box-bd ul li img{
+	height: 614px;
+}
+.page-main .continer #phone .box-bd .span16{
+	width: 992px;
+	
+}
+.page-main .continer #phone .box-bd .span16 ul li{	
+	height: 260px;
+    padding: 20px 0;
+    float: left;
+}
+.page-main .continer #phone .box-bd .span16 img{
+	width: 160px;
+    height: 160px;
+}

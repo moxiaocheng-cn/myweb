@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>验证码</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        #codeBox {
+            margin: 20px auto;
+            width: 200px;
+            height: 50px;
+            border: 1px solid green;
+            line-height: 50px;
+            text-align: center;
+            letter-spacing: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            -webkit-user-select: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="codeBox"></div>
+
+    <script>
+        var codeBox = document.getElementById('codeBox');
+
+        //=>queryCode：获取四位验证码
+        function queryCode() {
+            var result = '',
+                areaStr = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
+            for (var i = 0; i < 4; i++) {
+                var ran = Math.round(Math.random() * 61),
+                    char = areaStr[ran];
+                //=>验证一下新获取的CHAR字符是否已经在RESULT中存在了,如果存在了我们不存储,重新在获取一遍,反之才累加到RESULT中
+                if (result.indexOf(char) > -1) {
+                    i--;
+                    continue;
+                }
+                result += char;
+            }
+            codeBox.innerHTML = result;
+        }
+
+        queryCode();
+        codeBox.onclick = queryCode;
+    </script>
+</body>
+
+</html>

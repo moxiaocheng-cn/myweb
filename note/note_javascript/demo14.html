@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左右反弹动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: lightseagreen;
+            border-radius: 50%;
+
+        }
+
+        input {
+            position: absolute;
+            width: 200px;
+            top: 300px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+
+        #left {
+            left: 100px;
+        }
+
+        #right {
+            left: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <input type="button" value="向左走" id="left">
+    <input type="button" value="向右走" id="right">
+
+    <script src="utils.js"></script>
+    <script>
+        var oBox = document.getElementById("box");
+        var right = document.getElementById("right");
+        var left = document.getElementById("left");
+        // 获取目标位置
+        // 右边目标位置：
+        var targetRight = utils.winBox("clientWidth") - oBox.offsetWidth;
+        var targetLeft = 0;
+
+        function move(target) { // target 的接收的实参是固定值targetRight、targetLeft
+            // 如果target是targetRight，说明点击的是向右的按钮
+            // 如果target是targetLeft，说明点击的是向左的按钮
+
+            // 判断当前位置小于目标位置  说明当前动画是向右的
+            // 判断当前位置大于目标位置  说明当前动画是向左的；
+            clearInterval(oBox.timer);
+            // 定时器的累加；
+            var cur = utils.css(oBox, "left");
+            if (cur < target) {
+                // target是targetRight
+                // var timer；timer作为当前作用域中的私有变量
+                // 把定时器返回值放到当前元素的自定义属性上；
+                oBox.timer = setInterval(function () {
+                    //获取最新位置
+                    var newCur = utils.css(oBox, "left");
+                    newCur += 10;
+                    if (newCur >= target) {
+                        clearInterval(oBox.timer);
+                        utils.css(oBox, "left", target);
+                        return;
+                    }
+                    utils.css(oBox, "left", newCur)
+                }, 17)
+
+            } else if (cur >= target) {
+                oBox.timer = setInterval(function () {
+                    var curPos = utils.css(oBox, "left");
+                    curPos -= 10;
+                    if (curPos <= target) {
+                        utils.css(oBox, "left", target)
+                        clearInterval(oBox.timer);
+                        return;
+
+                    }
+                    utils.css(oBox, "left", curPos)
+                }, 17)
+
+            }
+
+
+
+        };
+        right.onclick = function () {
+            move(targetRight)
+        }
+        left.onclick = function () {
+            move(targetLeft)
+        }
+    </script>
+</body>
+
+</html>

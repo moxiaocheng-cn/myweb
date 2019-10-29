@@ -1,0 +1,57 @@
+html {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: rgb(45, 54, 64);
+    color: white;
+}
+a {
+    color: #fff;
+}
+.header {      
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    border-bottom: .08rem solid #3C4755;
+    background: #2D3640; 
+}
+.header .logo {
+    cursor: pointer;
+    margin-left: 5%;
+}
+.header .camera {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    background: #E46948;
+    margin-left: 2.5rem;
+}
+.header .camera img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+dl{
+    background: rgb(60, 71, 85);
+    font-size: 1.2rem; 
+    width: 25rem;
+    margin: 0 auto;
+}
+dt{
+    padding: 1rem;
+    border-bottom: .05rem solid rgb(115, 116, 115);
+}
+dd{
+    font-size: 1rem;
+    padding: .3rem .8rem ;
+}
+dd:hover{
+    background: rgb(228, 105, 72);
+}

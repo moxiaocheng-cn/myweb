@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>照片墙</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            padding: 10px;
+            width: 480px;
+            height: 640px;
+            background: yellow;
+            margin: 10px auto;
+            list-style: none;
+            position: relative;
+        }
+
+        ul li {
+            /*position: absolute;*/
+            width: 150px;
+            height: 150px;
+            float: left;
+            margin: 5px;
+            background: greenyellow;
+            -webkit-user-select: none;
+            cursor: move;
+        }
+
+        ul li img {
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+            width: 150px;
+            height: 150px;
+            border: none;
+        }
+
+        /*#box{*/
+
+        /*position: absolute;*/
+
+        /*width:100px;*/
+
+        /*height:100px;*/
+
+        /*background: red;*/
+
+        /*margin:20px;*/
+
+        /*left : 10px;*/
+
+        /*}*/
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>
+            <img src="1.png" alt="">
+        </li>
+        <li>
+            <img src="2.png" alt="">
+        </li>
+        <li>
+            <img src="3.png" alt="">
+        </li>
+        <li>
+            <img src="4.png" alt="">
+        </li>
+        <li>
+            <img src="5.png" alt="">
+        </li>
+        <li>
+            <img src="6.png" alt="">
+        </li>
+        <li>
+            <img src="7.png" alt="">
+        </li>
+        <li>
+            <img src="8.png" alt="">
+        </li>
+        <li>
+            <img src="9.png" alt="">
+        </li>
+        <li>
+            <img src="10.png" alt="">
+        </li>
+        <li>
+            <img src="11.png" alt="">
+        </li>
+        <li>
+            <img src="12.png" alt="">
+        </li>
+    </ul>
+    <script src="event.js"></script>
+    <script src="evnetDrag.js"></script>
+    <script>
+        var oLis = document.getElementsByTagName("li");
+        // 循环设置每一个li的样式,li的父级参照物是ul;
+        // 由于在设置每一个li的定位时，上一个li脱离文档流，当前这个li会占据上一个的位置；所以最后所有li叠加到一起；通过倒序的循环的方式；
+        for (var i = oLis.length - 1; i >= 0; i--) {
+            // offsetLeft : 会把当前元素的margin计算在内
+            // 在设置元素left的值时，不会将盒子的margin计算在内；
+            oLis[i].style.left = oLis[i].offsetLeft + "px";
+            oLis[i].style.top = oLis[i].offsetTop + "px";
+            oLis[i].style.position = "absolute";
+            // 清空所有的margin；
+            oLis[i].style.margin = 0 + "px";
+
+            new Drag(oLis[i]).on('selfdragStart', isHit).on('selfdragdown', increaseZindex).on('selfdragend',
+                changePosition);
+        }
+        // 判断当前盒子是否和其他盒子发生碰撞检测，如果有碰撞，返回true，没有碰撞返回false；
+
+        function isHit() { // ele : 当前被拖拽这个元素对象
+            //Drag 这个类的实例；
+            this["hited"] = [];
+            var ele = this.ele;
+            for (var i = 0; i < oLis.length; i++) {
+                var cur = oLis[i];
+                if (ele === cur) continue;
+                if (ele.offsetLeft + ele.offsetWidth < cur.offsetLeft || ele.offsetTop + ele.offsetHeight < cur.offsetTop ||
+                    ele.offsetLeft > cur.offsetLeft + cur.offsetWidth || ele.offsetTop > cur.offsetTop + cur.offsetHeight
+                ) {
+                    // 说明不碰撞
+                    cur.style.background = "";
+                } else {
+                    //碰撞
+                    oLis[i].style.background = "pink";
+                    this["hited"].push(cur);
+                }
+            }
+        }
+        // 改变当前盒子的index
+        var zIndex = 1;
+
+        function increaseZindex() {
+            this.ele.style.zIndex = ++zIndex;
+
+        }
+
+        function changePosition() {
+            // this
+            var ary = this['hited'];
+            for (var i = 0; i < ary.length; i++) {
+                var cur = ary[i]; // 每一个碰撞li;
+                cur.distance = Math.pow(this.ele.offsetLeft - cur.offsetLeft, 2) + Math.pow(this.ele.offsetTop - cur.offsetTop,
+                    2);
+                cur.style.background = "";
+            }
+            ary.sort(function (a, b) {
+                return a.distance - b.distance;
+            });
+            if (ary.length) {
+                this.ele.style.left = ary[0].style.left;
+                this.ele.style.top = ary[0].style.top;
+                ary[0].style.left = this.startX + "px";
+                ary[0].style.top = this.startY + "px";
+            } else {
+                this.ele.style.left = this.startX + "px"
+                this.ele.style.top = this.startY + "px"
+            }
+        }
+    </script>
+</body>
+
+</html>

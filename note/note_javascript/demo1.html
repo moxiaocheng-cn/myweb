@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            -webkit-user-select: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .tabBox {
+            margin: 20px auto;
+            width: 500px;
+        }
+
+        .tabBox ul {
+            position: relative;
+            top: 1px;
+            overflow: hidden;
+        }
+
+        .tabBox ul li {
+            float: left;
+            margin-right: 10px;
+            padding: 0 10px;
+            height: 35px;
+            line-height: 35px;
+            border: 1px solid #999;
+            background: #CCC;
+            cursor: pointer;
+        }
+
+        .tabBox ul li.select {
+            background: #FFF;
+            border-bottom-color: #FFF;
+        }
+
+        .tabBox div {
+            display: none;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            border: 1px solid #999;
+        }
+
+        .tabBox div.select {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tabBox" id="tabBox">
+        <ul>
+            <li class="select">A</li>
+            <li>B</li>
+            <li>C</li>
+        </ul>
+        <div class="select">选项卡1</div>
+        <div>选项卡2</div>
+        <div>选项卡3</div>
+    </div>
+
+    <script>
+        var tabBox = document.getElementById("tabBox"),
+            oList = tabBox.getElementsByTagName("li"),
+            oDiv = tabBox.getElementsByTagName("div");
+
+        function changeTab(index) { //index:当前点击li的索引
+            for (var i = 0; i < oList.length; i++) {
+                oList[i].className = oDiv[i].className = null;
+            }
+            oList[index].className = oDiv[index].className = "select";
+        };
+
+        // for (var i = 0; i < oList.length; i++) {
+        //     oList[i].onclick = function () {
+        //         changeTab(i);//=>不行的原因：给当前LI点击事件绑定方法的时候,
+        // 绑定的方法并没有执行（点击的时候才执行），循环3次，分别给3个LI的点击事件绑定了方法，
+        // 循环完成后i=3(全局的)；当点击的时候，执行绑定的方法，形成一个私有的作用域，用到了变量i，
+        // i不是私有的变量，向全局查找，此时全局的i已经是最后循环的3了
+        //     }
+        // }
+
+        // 实现1 自定义属性，存储i
+        // for (var i = 0; i < oList.length; i++) {
+        // oList[i].myIndex = i; 
+        // oList[i].onclick = function () {
+        //     changeTab(this.myIndex);
+        // }
+        // };
+
+        //实现2 闭包:形成不销毁的作用域，占内存
+        // for (var i = 0; i < oList.length; i++) {
+        // ~function (i) {
+        //     oList[i].onclick = function () {
+        //         changeTab(i);
+        //     }
+        // }(i);            
+        // };
+
+        //实现3 闭包:形成不销毁的作用域，占内存
+        // for (var i = 0; i < oList.length; i++) {
+        // oList[i].onclick = (function (i) {
+        //     return function () {
+        //         changeTab(i);
+        //     }
+        // })(i); 
+        // }
+
+        //实现4 ES6
+        for (let i = 0; i < oList.length; i++) {
+            oList[i].onclick = function () {
+                changeTab(i);
+            }
+        }
+    </script>
+</body>
+
+</html>

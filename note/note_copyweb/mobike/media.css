@@ -1,0 +1,61 @@
+/*1080px  640px*/
+/*
+媒体查询：
+    @media screen and (max-width: 1080px) {
+           .......
+    }
+    第一步，@media 媒体媒介
+    第二步，媒体类型
+           screen (PC 手机 ipad)
+           all (所有设备类型)
+           print (打印机)
+           TV
+    第三步，连接符 and not(排除某个设备) only
+    第四步，小括号，判断条件
+*/
+
+
+@media screen and (max-width: 1080px) {
+    .header .nav{
+        display: none;
+    }
+    .content a{
+        width: 50%;
+    }
+    .swiper{
+        width: 100%;
+        height: 100%;
+    }
+    .heading h1{
+        font-size: 280%;
+    }
+    .content a{
+        width: 50%;
+    }
+    .contanier{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 640px) {
+    .content a{
+        width: 100%;
+    }
+    .swiper{
+        width: 100%;
+        height: 100%;
+    }
+    .heading h1{
+        font-size: 280%;
+    }
+    .content a{
+        width: 100%;
+    }
+    .contanier{
+        width: 100%;
+    }
+    .contanier .item{
+        text-align: left;
+        width: 100%;
+        padding:20px 0;
+    }
+}

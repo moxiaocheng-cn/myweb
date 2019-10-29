@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放大动画</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        .pic{
+            width:615px;
+            height:333px;
+            overflow:hidden;
+        }
+
+        .pic img{
+            /*为了让鼠标移到图片上和移出图片都是缓动的效果，就在鼠标移上和默认身上都加上一样的transition即可*/
+            /*transition:transform 0.5s ease;*/
+            transition:all 0.5s ease;
+        }
+
+        .pic:hover img{
+            /*translatex移动X轴的坐标点; scale放大缩小*/
+            transform: translatex(-10px) scale(1.5);
+            /*不透明*/
+            opacity: .5;
+            /*transition过渡动画：
+            1.过渡动画的名称 可以统一用all代表
+            2.过渡动画的持续时间 时间越长 动画越慢 反之越快
+            3.过渡动画的默认曲线 默认 ease 平滑过渡
+            4.过渡动画的延迟时间*/
+            /*transition:transform 0.5s ease;*/
+            transition:all 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="pic">
+        <img src="small-banner-hwcloud.jpg" alt=""/>
+    </div>
+</body>
+</html>

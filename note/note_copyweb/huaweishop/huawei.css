@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+.header{
+    position: relative;
+    background: #fff;
+    width: 100%;
+    height: 83px;
+    padding: 6px 0;
+    /*盒子阴影效果
+    1.x轴的偏移量，值越大越往右
+    2.y轴的偏移量，值越大越往下
+    3.阴影的模糊半径，值越大越迷糊
+    4.阴影模糊半径的范围
+    5.阴影的颜色
+    颜色：rgba rgb 颜色色值
+         alpha 透明度【0-1】*/
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    z-index: 1;
+    border-bottom: 1px solid #e5e5e5;
+}
+.subinfo{
+    width: 100%;
+    padding: 0 15px;
+}
+.subinfo ul{
+    float: right;
+}
+.subinfo ul li{
+    float: left;
+    padding-left: 20px;
+}
+.subinfo li a{
+    color: #333;
+    font-size: 14px;
+}
+.subinfo li a:hover{
+    text-decoration: underline;
+    color: #006ad0;
+}
+.subinfo li .no:hover{
+    text-decoration: none;
+    color: #333;
+}
+.header .container{
+    /*固定定位 top bottom left right
+如果同时有top bottom ，由top决定
+如果同时有left right , 有left决定
+参照物：浏览器窗口*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1410px;
+    height: 55px;
+    padding: 0 15px;
+    background: #fff;
+
+}
+.container .logo{
+    float: left;
+    margin-top: 7px;
+}
+.container .nav{
+    float: left;
+    margin-left: 20px;
+    line-height: 54px;
+}
+.container .nav .sp{
+    padding-top: 8px;
+}
+.container .nav span{
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+    background-color: #eee;
+    padding-left: 36px;
+    padding-right: 18px;
+    display: block;
+}
+.container .nav a:hover span{
+    background-color: #d01;
+    color: #fff;
+}
+.container ul li{
+    float: left;
+    padding: 0 13px;
+}
+.container li a{
+    color: #323232;
+    display: inline-block;
+    height: 54px;
+    transition: border-bottom-color .3s,color .3s;
+}
+.container li a:hover{
+    text-decoration: none;
+    border-bottom: 2px solid #cb3034;
+    color: #e22835;
+    transition: border-bottom-color .3s,color .3s;
+}
+
+
+.swiper .slide{
+    width: 100%;
+    height: 540px;
+    background: url("http://www-file.huawei.com/-/media/CORPORATE/Images/home/big-banner/2017/hw_bg_500.jpg") no-repeat center;
+    margin-bottom: 30px;
+}
+
+
+.lg-container{
+    padding: 0 5px;
+}
+.col{
+    position: relative;
+    width: 50%;
+    float: left;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 1.5%;
+}
+.col img{
+    width: 110%;
+    height: 100%;
+    /*transition: all 1s ease;*/
+    /*目的是为了鼠标移出有动画效果，与移入效果同样*/
+    transition: all 1s cubic-bezier(.19,1,.22,1);
+}
+.col h3{
+    position: absolute;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 36px;
+    color: #fff;
+    bottom: 100px;
+    left: 40px;
+    transition: all 1s cubic-bezier(.19,1,.22,1);
+}
+.col p{
+    position: absolute;
+    left: 40px;
+    bottom: -80px;
+    width: 446px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 28px;
+    transition: all 1s cubic-bezier(.19,1,.22,1);
+    opacity: 0;
+}
+.col .pic{
+    position: relative;
+}
+.col .pic:first-child{
+    margin-bottom: 3%;
+    /*> 子元素选择器  :fist-child 第一个子元素
+                :last-child 最后一个子元素
+                :nth-chlid 第n个子元素*/
+}
+.col a{
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+.col .bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+    transition: all 1s cubic-bezier(.19,1,.22,1);
+}
+.col a:hover img{
+    /*margin-left: -10px;*/
+    transform: translateX(-10px);
+    /*transition: all 1s ease;*/
+    /*目的是为了鼠标移入有动画效果，与移出效果同样*/
+    transition: all 1s cubic-bezier(.19,1,.22,1);
+}
+.col a:hover p{
+    bottom: 30px;
+    transition: all 1s cubic-bezier(.19,1,.22,1);
+    opacity: 1;
+}
+.col a:hover h3{
+    bottom: 130px;
+    transition: all 1s cubic-bezier(.19,1,.22,1);
+}
+.col a:hover .bg{
+     background: rgba(0,0,0,.5);
+     transition: all 1s cubic-bezier(.19,1,.22,1);
+ }
+
+
+.lt-img{
+    padding: 0 15px;
+    margin-bottom: 24px;
+}
+.lt-img .rt-tx{
+    width: 100%;
+    height: 540px;
+    background: url("images/bcw_homebanner_xl_cn_v2.jpg") no-repeat;
+    background-size: cover;
+}
+
+
+/*底部*/
+ul{
+    list-style-type: none;
+    padding: 0;
+    font-size: 16px;
+}
+.common{
+    width: 100%;
+    height: 340px;
+    background-color: #f5f5f5;
+    padding-bottom: 10px;
+}
+.common .gray{
+    width: 1200px;
+    line-height: 28px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.common h2{
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #333;
+    margin: 20px 0;
+}
+.common .col-sm1{
+    color: #333;
+    width: 33.33%;
+    padding: 0 15px;
+    float: left;
+}
+.common a{
+    color: #333;
+    text-decoration: none;
+}
+.common a:hover{
+    color: #006ad0;
+    text-decoration:underline;
+}
+.common .col-sm1 span{
+    display: block;
+    font-size: 12px;
+    color: #999;
+}
+.common .col-sm2{
+    width: 66.67%;
+    float: left;
+    padding: 0 15px;
+    margin-right: -40px;/*不懂原理*/
+    margin-left: 40px;/*不懂原理*/
+}
+.common .col-sm2 .tit{
+    width: 50%;
+    float: left;
+}
+.common .col-sm2 h2{
+    padding-left: 45px;
+    padding-right: 15px;
+}
+.common .gray .col-sm2 .list1{
+    padding-left: 45px;
+    padding-right: 15px;
+}
+.common .gray .col-sm2 .list2{
+    padding-left: 15px;
+    padding-right: 45px;
+}
+.common .col-sm2 h3{
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.common .col-sm2 p{
+    color: #333;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+.common .col-sm2 img{
+    width: 100%;
+}
+
+
+
+.footer{
+    width: 100%;
+    height: 353px;
+    background: #272727;
+}
+.footer span,h4{
+    font-size: 16px;
+    font-weight: 400;
+    color: #ccc;
+    text-align: left;
+    line-height: 28px;
+}
+.footer a{
+    color: #ccc;
+    text-decoration: none;
+}
+.footer a:hover{
+    text-decoration: underline;
+}
+.footer .left ul{
+    margin-top: 5px;
+    list-style-type: none;
+}
+.footer .left ul li{
+    line-height: 1.7;
+    margin-bottom: 0;
+    font-size: 14px;
+    text-align: left;
+}
+.footer .row{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0 10px;
+}
+.footer .row .left{
+    width: 66.67%;
+    float: left;
+}
+.footer .row .le1{
+    float: left;
+    padding: 0 15px;
+    width: 25%;
+}
+hr{
+    border-color: #424141;
+}
+.footer .row .right{
+    width: 33.33%;
+    float: left;
+    padding: 0 20px;
+}
+.f-icon ul{
+    margin: 20px 0;
+}
+.f-icon ul li{
+    float: left;
+    padding-right: 20px;
+}
+.f-icon h4{
+    margin-top: 10px;
+}
+.footer .bottom{
+    width: 100%;
+}
+.bottom .bot{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.bottom .bot .bot1{
+    float: left;
+}
+.bottom .bot .bot1 span{
+    font-size: 14px;
+    color: #ccc;
+}
+.bottom .bot ul{
+    float: right;
+    font-size: 14px;
+    color: #ccc;
+}
+.bottom .bot ul li{
+    float: left;
+    padding-right: 10px;
+}
+
+
+
+

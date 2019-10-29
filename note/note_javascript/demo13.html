@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标跟随</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: lightseagreen;
+            margin: 30px auto;
+        }
+
+        #mark {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var oBox = document.getElementById("box");
+        var mark1;
+        var l = oBox.offsetLeft;
+        var t = oBox.offsetTop;
+        // 当鼠标滑入小盒子中，会触发小盒子的onmouseover事件行为，由于onmouseover有冒泡传播的机制，所以会继续触发oBox的onmouseover；重新创建div；
+        oBox.onmouseenter = function () {
+            var mark = document.createElement("div");
+            mark.id = "mark";
+            this.appendChild(mark)
+            mark1 = document.getElementById("mark")
+        }
+        oBox.onmousemove = function (e) {
+            e = e || window.event;
+            mark1.style.left = e.clientX - l + 10 + "px";
+            mark1.style.top = e.clientY - t + 10 + "px";
+        }
+        oBox.onmouseleave = function () {
+            if (mark1) {
+                this.removeChild(mark1)
+            }
+        }
+
+        // var oBox = document.getElementById("box");
+        // var mark = document.getElementById("mark");
+        // var l = oBox.offsetLeft;
+        // var t = oBox.offsetTop;
+
+        // // 给oBox绑定onmouseenter  onmouemove   onmouseleave
+        // oBox.onmouseenter = function () {
+        //     mark.style.display = "block";
+        // };
+        // oBox.onmousemove = function (e) {
+        //     e = e || window.event;
+        //     //        console.log(e);
+        //     // e.clientX  e.clientY : 当前鼠标距离窗口的px
+        //     // left 相对于父级元素
+        //     mark.style.left = e.clientX - l + 10 + "px";
+        //     mark.style.top = e.clientY - t + 10 + "px";
+        // }
+        // oBox.onmouseleave = function () {
+        //     mark.style.display = "none";
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽(登陆框)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: #ffaa2a;
+        }
+
+        #box h2 {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 10px;
+            font-size: 14px;
+            color: white;
+            background: #008CD7;
+            cursor: move;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <h2 id="title">登录</h2>
+    </div>
+    <script>
+        var oBox = document.getElementById("box");
+        var login = document.getElementById("title");
+        var winW = document.documentElement.clientWidth || document.body.clientWidth;
+        var winH = document.documentElement.clientHeight || document.body.clientHeight;
+        var oBoxW = oBox.offsetWidth,
+            oBoxH = oBox.offsetHeight;
+        oBox.style.left = (winW - oBoxW) / 2 + "px";
+        oBox.style.top = (winH - oBoxH) / 2 + "px";
+        // 在IE 和火狐 setCapture  : 把鼠标和运动的元素紧紧捆绑在一起；
+
+        login.onmousedown = function (e) {
+            e = e || window.event;
+            // 记录鼠标初始按下的位置
+            this["strL"] = e.clientX;
+            this["strT"] = e.clientY;
+            // 记录盒子初始位置
+            this["strX"] = parseFloat(oBox.style.left);
+            this["strY"] = parseFloat(oBox.style.top);
+            if (this.setCapture) {
+                this.setCapture();
+            }
+            var that = this;
+            // 事件委托：
+            //         this.onmousemove  = move;
+            //         this.onmouseup = up;
+            document.onmousemove = function (e) {
+                move.call(that, e);
+            }
+            document.onmouseup = function (e) {
+                up.call(that, e);
+            }
+        }
+
+        function move(e) {
+            e = e || window.event;
+            // 计算鼠标横向和纵向变化的距离
+            var changeL = e.clientX - this["strL"];
+            var changeT = e.clientY - this["strT"];
+            var left = this["strX"] + changeL;
+            var top = this["strY"] + changeT;
+            if (left < 0) {
+                left = 0;
+            }
+            var maxL = winW - oBoxW;
+            if (left > maxL) {
+                left = maxL;
+            }
+            if (top < 0) {
+                top = 0
+            }
+            var maxT = winH - oBoxH;
+            if (top > maxT) {
+                top = maxT;
+            }
+            oBox.style.left = left + "px";
+            oBox.style.top = top + "px";
+
+        }
+
+        function up() {
+            if (this.setCapture) {
+                this.releaseCapture();
+            }
+            document.onmousemove = null;
+            document.onmouseup = null;
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>回到顶部</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 1000%;
+            background: -webkit-linear-gradient(
+                top left,
+                lightcoral,
+                lightblue, 
+                lightgreen, 
+                lightcyan, 
+                lightgoldenrodyellow);
+        }
+
+        .link {
+            display: none;
+            /*开始是隐藏的:当浏览器卷去的高度超过一屏幕高度的时候再让当前这个按钮展示*/
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: #555;
+            color: #FFF;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <a href="javascript:;" class="link" id="link">顶部</a>
+
+    <script src="utils.js"></script>
+    <script>
+        /*
+         * window.onscroll：浏览器滚动条的滚动事件(只要滚动条滚动了就会触发这个事件)
+         * 1、鼠标滚轮控制 或者 手动拖动滚动条
+         * 2、键盘按键控制
+         * 3、使用JS代码控制
+         * ...
+         * 不管什么方式,只要滚动条动了就会触发这个事件
+         */
+        ~ function () {
+            var link = document.getElementById('link');
+            window.onscroll = function () {
+                //=>获取当前卷去的高度和一屏幕高度
+                var curTop = utils.winBox('scrollTop'),
+                    curHeight = utils.winBox('clientHeight');
+
+                //=>已经卷去的高度>=一屏幕的高度的时候,展示回到顶部按钮,否则隐藏按钮即可
+                utils.css(link, 'display', curTop >= curHeight ? 'block' : 'none');
+            };
+            link.onclick = function () {
+                utils.winBox('scrollTop', 0);
+            };
+        }();
+    </script>
+</body>
+
+</html>

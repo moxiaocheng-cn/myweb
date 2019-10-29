@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+em{
+    font-style: normal;
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    background-color: #ccc;
+}
+
+.title{
+    width: 800px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.title h3{
+    border-bottom: 1px solid #90bba8;
+    color: #555;
+    font-size: 18px;
+    margin: 5px 10px;
+    height: 45px;
+    line-height: 45px;/*对象的行高。即字体最底端与字体内部顶端之间的距离。*/
+}
+
+.title h3 img{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.title h3 a{
+    color: #00a67c;
+    font-size: 14px;
+    font-weight: normal;
+    float: right;/*位置靠右*/
+}
+
+.title ul li{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.title ul li span{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #fd8c84;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 15px;
+    margin-left:13px;
+    /*vertical-align: baseline;*/
+
+    /*vertical-align: middle;*//*vertical-align 属性设置元素的垂直对齐方式
+    middle：将支持valign特性的象的对内容与对象中部对齐
+    baseline：将支持valign特性的对象的内容与基线对齐*/
+}
+
+.title ul li a{
+    display: block;
+    width: 752px;/*宽度*/
+    color: #677;
+    padding-left: 2px;
+    text-overflow: ellipsis;/*省略号*/
+    overflow: hidden;/*溢出隐藏*/
+    white-space: nowrap;/*强制不折行*/
+    float: right;
+    margin-right: 5px;
+}
+
+.title ul li a:hover{
+    background-color: #f2f2f2;
+}
+
+.title li a em{
+    color: #1d9fd3;
+}
+
+.title li a:hover em{
+    font-weight: bold;
+}

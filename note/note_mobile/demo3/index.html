@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet/less" href="css/index.less">
+    <script src="js/less-2.5.3.min.js"></script>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/layer.css" />
+      
+    <script src="" type="text/javascript" charset="utf-8"></script>
+        <style type="text/css">
+    	    body {  
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;  
+        font-size: 14px;  
+        color:#000;  
+        margin: 0;  
+        padding: 0;  
+    }  
+    .swiper-container {  
+        margin: 0 auto;  
+    }  
+    </style>
+    <script>
+        window.addEventListener('resize',computedSize);
+        function computedSize() {
+            var winw =  document.documentElement.clientWidth;
+            document.documentElement.style.fontSize = winw/640*100+"px";
+        }
+        computedSize();
+    </script>
+
+</head>
+<body>
+<div class="swiper-container">
+    <!--<div class="bg"></div>-->
+    <audio src="music/music.mp3" preload="none" autoplay loop="infinite" id="musicAudio"></audio>
+    <div class="mus">
+        <img src="images/mus.png" alt="" class=" seclect"  id="mus">
+    </div>
+    <div class="top"><img src="images/arrows.png" alt=""></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide one">
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <div class="ani title" swiper-animate-effect="rotateIn"  swiper-animate-duration=".5s"><img src="images/one/title.png" alt=""></div>
+            <div class="ani text" swiper-animate-effect="bounceIn"  swiper-animate-duration="1s"><img src="images/one/text.png" alt=""></div>
+            <div class="footer">
+                <div class="ani footer1" swiper-animate-effect="lightSpeedIn" swiper-animate-delay=".5s" swiper-animate-duration="1.5s"><img src="images/one/footer1.png" alt=""></div>
+                <div class="ani footer2" swiper-animate-effect="bounceInLeft" swiper-animate-delay=".5s" swiper-animate-duration="2.5s"><img src="images/one/footer2.png" alt=""></div>
+                <div class="ani footer3" swiper-animate-effect="bounceInRight" swiper-animate-delay=".5s" swiper-animate-duration="3.5s"><img src="images/one/footer3.png" alt=""></div>
+            </div>
+        </div>
+        <div class="swiper-slide two">
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <div class="ani title" swiper-animate-effect="rotateIn"  swiper-animate-duration=".5s"><img src="images/two/title.png" alt=""></div>
+            <p class="ani nav" swiper-animate-effect="rotateIn"  swiper-animate-duration="1s">一个平台和一个行业应用</p>
+            <div class="content">
+                <div class="ani content21" swiper-animate-effect="bounceInDown" swiper-animate-delay=".5s" swiper-animate-duration="1.2s"><img src="images/two/content21.png" alt=""></div>
+                <div class="ani content25" swiper-animate-effect="zoomIn" swiper-animate-delay=".5s" swiper-animate-duration=".75s"><img src="images/two/content25.png" alt=""></div>
+            </div>
+        </div>
+        <div class="swiper-slide three">
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <div class="ani title" swiper-animate-effect="rotateIn"  swiper-animate-duration=".5s"><img src="images/3/content31.png" alt=""></div>
+            <p class="ani nav" swiper-animate-effect="rotateIn"  swiper-animate-duration="1s">打造基于房地产全价值链的信息化</p>
+            <div class="ani content3" swiper-animate-effect="bounceInDown" swiper-animate-delay=".5s" swiper-animate-duration="1.5s">
+                <div class="content-top"><img src="images/3/contenttop.png" alt=""></div>
+                <div class="content-down"><img src="images/3/contentdown.png" alt=""></div>
+                <div class="content-left"> 
+                    <p class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="0.25s" swiper-animate-duration="2s">土地投资决策系统</p>
+                    <p class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="0.75s" swiper-animate-duration="2s">招采管理系统</p>
+                    <p class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="1.25s" swiper-animate-duration="2s">质量管理系统</p>
+                    <p class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="1.75s" swiper-animate-duration="2s">销售管理系统</p>
+                    <p class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="2.25s" swiper-animate-duration="2s">资产租赁系统</p>
+                    <p class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="2.75s" swiper-animate-duration="2s">商业智能分析系统(BI)</p>
+                </div>
+                <div class="content-right">
+                    <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="0.5s" swiper-animate-duration="2s">成本管理系统</p>
+                    <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="1s" swiper-animate-duration="2s">计划管理系统</p>
+                    <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="1.5s" swiper-animate-duration="2s">费用管理系统</p>
+                    <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="2s" swiper-animate-duration="2s">云易营销平台</p>
+                    <p class="ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="2.5s" swiper-animate-duration="2s">物业管理系统</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide four">
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <div class="ani title" swiper-animate-effect="rotateIn"  swiper-animate-duration=".5s"><img src="images/4/title.png" alt=""></div>
+            <p class="ani nav" swiper-animate-effect="rotateIn"  swiper-animate-duration="1s">首款SaaS化地产行业云ERP应用</p>
+            <div class="content4">
+                <div class="content-plan ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="0.25s" swiper-animate-duration="2s">
+                        <div class="img41"><img src="images/4/content41.png" alt=""></div>
+                </div>
+                <div class="content-plan ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="0.5s" swiper-animate-duration="2s">
+                        <div class="img41"><img src="images/4/content42.png" alt=""></div>
+                </div>
+                <div class="content-plan ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="0.75s" swiper-animate-duration="2s">
+                        <div class="img41"><img src="images/4/content43.png" alt=""></div>
+                </div>
+                <div class="content-plan ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="1s" swiper-animate-duration="2s">
+                        <div class="img41"><img src="images/4/content44.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide five">
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <div class="ani title" swiper-animate-effect="rotateIn"  swiper-animate-duration=".5s"><img src="images/4/title.png" alt=""></div>
+            <p class="ani nav" swiper-animate-effect="rotateIn"  swiper-animate-duration="1s">方案特色</p>
+            <div class="content5 ani" swiper-animate-effect="rollIn"  swiper-animate-duration="1.5s">
+                <div class="content51">
+                	<img src="images/5/content50.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide six">
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <div class="ani title" swiper-animate-effect="rotateIn"  swiper-animate-duration=".5s"><img src="images/4/title.png" alt=""></div>
+            <p class="ani nav" swiper-animate-effect="rotateIn"  swiper-animate-duration="1s">六大核心优势</p>
+            <div class="content6">
+                <div class="img-left ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="0.5s" swiper-animate-duration="1.5s">
+                    <img src="images/6/title6.png" alt="">
+                </div>
+                <div class="contentRight">
+                    <div class="con-text ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="0.5s" swiper-animate-duration="2s">
+                            <img src="images/6/iconimg61.png" alt="">
+                    </div>
+                    <div class="con-text ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="0.75s" swiper-animate-duration="2s">
+                            <img src="images/6/iconimg62.png" alt="">
+                    </div> 
+                    <div class="con-text ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="1s" swiper-animate-duration="2s">
+                            <img id="iconimg63" src="images/6/iconimg63.png" alt="">
+                    </div> 
+                    <div class="con-text ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="1.25s" swiper-animate-duration="2s">
+                            <img src="images/6/iconimg64.png" alt="">
+                    </div>
+                    <div class="con-text ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="1.5s" swiper-animate-duration="2s">
+                            <img src="images/6/iconimg65.png" alt="">
+                    </div>
+                    <div class="con-text ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="1.75s" swiper-animate-duration="2s">
+                            <img src="images/6/iconimg66.png" alt="">
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="swiper-slide seven">
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <div class="ani title" swiper-animate-effect="rotateIn"  swiper-animate-duration=".5s"><img src="images/7/title7.png" alt=""></div>
+            <p class="ani nav" swiper-animate-effect="rotateIn"  swiper-animate-duration="1s">敏捷运营 降本增效</p>
+            <div class="content7">
+                <div class="con-img7 ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="0.25s" swiper-animate-duration="2s"><img src="images/7/conimg1.png" alt=""></div>
+                <div class="con-img7 ani" swiper-animate-effect="bounceInRight" swiper-animate-delay="0.25s" swiper-animate-duration="2s"><img src="images/7/conimg2.png" alt=""></div>
+                <div class="con-img7 ani" swiper-animate-effect="swing" swiper-animate-delay="0.25s" swiper-animate-duration="2s"><img src="images/7/conimg3.png" alt=""></div>
+                <div class="con-img7 ani" swiper-animate-effect="bounceIn" swiper-animate-delay="0.25s" swiper-animate-duration="2s"><img src="images/7/conimg4.png" alt=""></div>
+                <div class="con-img7 ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="0.25s" swiper-animate-duration="2s"><img src="images/7/conimg5.png" alt=""></div>
+                <div class="con-img7 ani" swiper-animate-effect="fadeInDownBig" swiper-animate-delay="0.25s" swiper-animate-duration="2s"><img src="images/7/conimg6.png" alt=""></div>
+                <div class="con-img7 ani" swiper-animate-effect="fadeInLeft" swiper-animate-delay="0.25s" swiper-animate-duration="2s"><img src="images/7/conimg7.png" alt=""></div>
+                <div class="con-img7 ani" swiper-animate-effect="fadeInRight" swiper-animate-delay="0.25s" swiper-animate-duration="2s"><img src="images/7/conimg8.png" alt=""></div>
+                <div class="con-img7 ani" swiper-animate-effect="bounceInDown" swiper-animate-delay="0.25s" swiper-animate-duration="2s"><img src="images/7/conimg9.png" alt=""></div>
+                <div class="con-img7 ani" swiper-animate-effect="bounceInUp" swiper-animate-delay="0.25s" swiper-animate-duration="2s"><img src="images/7/conimg10.png" alt=""></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="swiper-slide eight">
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <div class="ani title" swiper-animate-effect="rotateIn"  swiper-animate-duration=".5s"><img src="images/4/title.png" alt=""></div>
+            <p class="ani nav" swiper-animate-effect="rotateIn"  swiper-animate-duration="1s">快速包费用</p>
+            <div class="content8">
+                <div class="conimg81 ani"  swiper-animate-effect="flip" swiper-animate-delay="0.25s" swiper-animate-duration="1.75s" >
+                	<img src="images/8/conimg81.png" alt="" />
+                </div>
+                <div class="conimg82 ani" swiper-animate-effect="bounceInDown" swiper-animate-delay="1s" swiper-animate-duration="1.75s" >
+                	<img src="images/8/conimg82.png" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide nine">
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <div class="ani title" swiper-animate-effect="rotateIn"  swiper-animate-duration=".5s"><img src="images/4/title.png" alt=""></div>
+            <p class="ani nav" swiper-animate-effect="rotateIn"  swiper-animate-duration="1s">快速包在线申请</p>
+            <div class="con9 ani" swiper-animate-effect="rotateIn"  swiper-animate-duration="2s">
+                    <table class="table9">
+                        <img src="images/9/icon91.png" alt="">姓名<span>*</span>
+                        <div><input type="text" name="username" id="username" tabindex="1" size="15" value="" placeholder="请输入您的姓名" /></div>
+                        <img src="images/9/icon92.png" alt="">公司
+                        <div><input type="text" name="company" id="company" tabindex="2" size="16" value="" placeholder="请输入您的公司地址" /></div>
+                        <img src="images/9/icon93.png" alt="">手机<span>*</span>
+                        <div><input type="text" name="mobile" id="mobile" tabindex="3" size="17" value="" placeholder="请输入您的联系方式" /></div>
+                        <img src="images/9/icon94.png" alt="">邮箱
+                        <div><input type="text" name="email" id="email" tabindex="4" size="18" value="" placeholder="请输入您的邮箱地址" /></div>
+                        <div class="btn" id="btn"><img src="images/9/button.jpg" alt=""><span>立即提交</span></div>
+                    </table>
+                    <div class="clear9"></div>
+            </div>
+        </div>
+        <div class="swiper-slide ten">
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <div class="conimg10 ani" swiper-animate-effect="fadeInDown" swiper-animate-delay="0.25s" swiper-animate-duration="0.5s"><img src="images/10/img101.jpg" alt=""></div>
+            <h3 class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="0.25s" swiper-animate-duration="1s">北京巨洲云科技有限公司</h3>
+            <div class="content10">
+                <div class="context10 ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="0.5s" swiper-animate-duration="1.5s">
+                    <img src="images/10/imgicon101.png" alt="">
+                    <p>400-000-3200</p>
+                </div>
+                <div class="context10 ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="1s" swiper-animate-duration="1.5s">
+                    <img src="images/10/imgicon102.png" alt="">
+                    <p>WWW.JUZHOUYUN.COM</p>
+                </div>
+                <div class="context10 ani" swiper-animate-effect="bounceInLeft" swiper-animate-delay="1.5s" swiper-animate-duration="1.5s">
+                    <img src="images/10/imgicon103.png" alt="">
+                    <p>北京市朝阳区建国路甲92号世贸大厦19层</p>
+                </div>
+            </div>
+            <div class="weixin ani"swiper-animate-effect="flip" swiper-animate-delay="1s" swiper-animate-duration="2s"><img src="images/10/img104.jpg" alt=""></div>
+        </div>
+    </div>
+    <!--如果需要分页器 -->
+</div>
+<script type="text/javascript">
+	    	var h=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    	var swiper=document.getElementsByClassName("swiper-container")[0];
+    	swiper.style.height=h+"px";
+</script>
+<script src="js/swiper.min.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/swiper.animate1.0.2.min.js"></script>
+<script src="js/layer.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script>
+    function shareFn(title, linkUrl, desc, imgUrl) {
+		var local =location.href;
+		  $.ajax({
+		url: linkUrl,
+		        dataType: 'json',
+		        type: 'POST',
+		        data:{"url":local},
+		        async: true,
+		success: function(data){
+			console.log(data);
+			console.log(data.msg.appId);
+		    wx.config({
+		    debug: false, // 开启调试模式,
+		    appId: data.msg.appId, // 必填，公众号的唯一标识
+		    timestamp:data.msg.timestamp, // 必填，生成签名的时间戳
+		    nonceStr:data.msg.nonceStr, // 必填，生成签名的随机串
+		    signature:data.msg.signature,// 必填，签名，见附录1
+		    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone','chooseWXPay'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+		});
+		        // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+		  wx.ready(function(){
+		
+		wx.onMenuShareTimeline({
+		          title: title, // 分享标题
+		          link: local, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+		          imgUrl: imgUrl, // 分享图标
+		          success: function () {
+		          // 用户确认分享后执行的回调函数
+		          alert("分享成功")
+		      },cancel: function () {
+		          // 用户取消分享后执行的回调函数
+		          alert("取消分享")
+		          }
+		      });
+		wx.onMenuShareAppMessage({
+				title: title, // 分享标题
+				desc: desc, // 分享描述
+				link: local, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+				imgUrl: imgUrl, // 分享图标
+				type: 'link', // 分享类型,music、video或link，不填默认为link
+				dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+				success: function () {
+				// 用户确认分享后执行的回调函数
+				alert("分享成功")
+				},
+				cancel: function () {
+				// 用户取消分享后执行的回调函数
+				alert("取消分享")
+				}
+			});
+		});
+		      // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+		      wx.error(function(res){
+		      	 console.log(JSON.stringify(res))
+		      	alert(JSON.stringify(res))
+		      });
+		    }
+		});
+	};
+		var url = "http://h5.juzhouyun.com/excel/fenxiang";
+		shareFn("巨洲云地产",url,"巨洲云地产ERP","");
+		var local = window.location.href.split('#')[0];
+    </script>
+</body>
+</html>

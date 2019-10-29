@@ -1,0 +1,93 @@
+.content{
+    width: 660px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 30px;
+
+}
+
+.content .hd{
+    height: 29px;
+    width: 100%;
+    border-top: 1px solid #6daaea;
+
+}
+
+.content h2 a{
+    color: #0873c0;
+}
+
+.content h2{
+    color: #0873c0;
+    font-size: 14px;
+    margin-top: 6px;
+    text-indent: 5px;
+}
+
+.content .hd:hover{
+    border-top: 1px solid #6daaea;
+    background-color: #f7fafd;
+}
+
+.content .bd{
+    margin-top:15px;
+}
+
+.content .main{
+    width: 320px;
+    float: left;
+    margin-right: 10px;
+}
+
+.content .bd .area{
+    overflow: hidden;
+}
+
+.content .bd .main .img{
+    float: left;
+}
+
+.content .bd .main img{
+    width: 108px;
+    height: 70px;
+}
+
+.content .bd .main .txt{
+    float: left;
+    width: 197px;
+    margin-left: 15px;
+    margin-top: 10px;
+    line-height: 25px;
+    /*弹性盒模型*/
+    display: -webkit-box;
+    /*文字排列方向，垂直方向*/
+    -webkit-box-orient: vertical;
+    /*文字显示行数*/
+    -webkit-line-clamp: 2;
+    /*溢出省率号...,可以不写*/
+    /*text-overflow:ellipsis;*/
+    overflow: hidden;
+    color: #3b639f;
+}
+
+.content .main .txt a{
+    color: #3b639f;
+}
+
+.content .bd .main ul li{
+    font-size: 14px;
+    line-height: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*nowrap禁止文字自动换行*/
+    white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+

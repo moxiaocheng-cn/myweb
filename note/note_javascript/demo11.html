@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>推箱子(键盘)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 25px;
+            color: #31C27C;
+            background: lightblue;
+            position: absolute;
+            left: 200px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">推箱子</div>
+    <script>
+        var oBox = document.getElementById("box");
+        window.onkeydown = function (e) {
+            e = e || window.event;
+            console.log(e.which); // 在IE678 不兼容的；
+            if (e.keyCode === 37) {
+                oBox.style.left = parseFloat(getComputedStyle(oBox).left) - 5 + "px";
+            } else if (e.keyCode === 38) {
+                oBox.style.top = parseFloat(getComputedStyle(oBox).top) - 5 + "px";
+            } else if (e.keyCode === 39) {
+                oBox.style.left = parseFloat(getComputedStyle(oBox).left) + 5 + "px";
+            } else if (e.keyCode === 40) {
+                oBox.style.top = parseFloat(getComputedStyle(oBox).top) + 5 + "px";
+            } else {
+                oBox.style.background = "red";
+            }
+        }
+    </script>
+</body>
+
+</html>
